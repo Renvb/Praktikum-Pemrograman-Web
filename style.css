@@ -1,0 +1,241 @@
+/* RESET & GLOBAL STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
+    font-family: "Lexend", sans-serif;
+    line-height: 1.6;
+    color: #222;
+    background-color: #fafafa;
+}
+
+a {
+    color: #59bfff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+section {
+    padding: 2rem 1rem;
+}
+
+i {
+    font-size: 2rem;
+}
+
+/* HEADER & NAV */
+header {
+    color: #111;
+    padding: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header a:hover {
+    text-decoration: none;
+}
+
+header h1 {
+    margin-bottom: 0.25rem;
+    background: linear-gradient(90deg, #2a9ff4, #a5d9ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+nav a {
+    color: #111;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #59bfff;
+}
+
+/* HERO */
+section:first-of-type {
+    background: linear-gradient(135deg, #a5d9ff, #f0f7ff);
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+section:first-of-type img {
+    margin-top: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    max-width: 500px;
+    width: 100%;
+}
+
+/* GRID ARTISTS */
+#artis {
+    background: #fff;
+}
+
+#artis h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.artis-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* GRID PRODUCTS */
+#produk h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.produk-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.buy-section {
+    margin-top: auto;
+}
+
+/* Card */
+.card {
+    background: #fefefe;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 2px solid #59bfff;
+}
+
+.card img {
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    width: 125px;
+    height: 125px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.card p {
+    margin: 0.25rem 0;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1.25rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: #59bfff;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: #53b4f0;
+}
+
+/* TENTANG */
+#tentang {
+    background: #f0f7ff;
+    text-align: center;
+    max-width: 95%;
+    margin: 0 auto;
+    border-radius: 10px;
+    padding: 2rem 1.5rem;
+    margin-bottom: 2rem;
+    
+}
+
+/* FOOTER */
+footer {
+    background: #eee;
+    color: #111;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.9rem;
+    border-top: #111 1px solid;
+}
+
+footer a {
+    color: #2a9ff4;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: stretch;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    nav ul {
+        font-size: 0.9rem;
+        gap: 2rem;
+        justify-content: space-between;
+        padding: 0 1rem;
+    }
+
+    nav ul i {
+        font-size: 1.5rem;
+    }
+
+    section {
+        padding: 1.5rem 1rem;
+    }
+}
