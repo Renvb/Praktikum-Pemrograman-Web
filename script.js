@@ -1,21 +1,20 @@
-const navToggle = document.querySelector('.nav-toggle');
 const nav = document.querySelector('nav');
+const hamburger = document.getElementById("hamburger");
 
-navToggle.addEventListener('click', () => {
-    nav.classList.toggle('active');
+hamburger.addEventListener('click', () => {
+    const isActive = hamburger.classList.toggle('active');
+    nav.classList.toggle('active', isActive);
 
-    const icon = navToggle.querySelector('i');
-    icon.classList.toggle('bi-list');
-    icon.classList.toggle('bi-x');
+    hamburger.setAttribute('aria-expanded', isActive);
 });
 
 const navLinks = document.querySelectorAll('nav a');
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
-        nav.classList.remove('active');
-        const icon = navToggle.querySelector('i');
-        icon.classList.add('bi-list');
-        icon.classList.remove('bi-x');
+        const isActive = hamburger.classList.toggle('active');
+        nav.classList.toggle('active', isActive);
+
+        hamburger.setAttribute('aria-expanded', isActive);
     });
 });
 
