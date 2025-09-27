@@ -38,6 +38,41 @@ i {
     font-size: 2rem;
 }
 
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #59bfff;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transform: scale(0.8);
+    pointer-events: none;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#backToTop.show {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+}
+
+#backToTop i {
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+
+
 /* HEADER & NAV */
 header {
     color: #111;
@@ -54,6 +89,12 @@ header {
     background: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+header.scrolled {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.3s ease;
+}
+
 
 header a:hover {
     text-decoration: none;
@@ -83,6 +124,15 @@ nav a {
 
 nav a:hover {
     color: #59bfff;
+}
+
+.nav-toggle {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #111;
 }
 
 /* HERO */
@@ -147,7 +197,16 @@ section:first-of-type img {
     display: flex;
     flex-direction: column;
     align-items: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
 }
+
+.card.reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 
 .card:hover {
     transform: translateY(-5px);
@@ -195,7 +254,7 @@ section:first-of-type img {
     border-radius: 10px;
     padding: 2rem 1.5rem;
     margin-bottom: 2rem;
-    
+
 }
 
 /* FOOTER */
@@ -215,7 +274,6 @@ footer a {
 /* RESPONSIVE */
 @media (max-width: 768px) {
     header {
-        flex-direction: column;
         gap: 0.75rem;
         align-items: stretch;
         padding-left: 2rem;
@@ -226,7 +284,38 @@ footer a {
         font-size: 1.5rem;
     }
 
+    section {
+        padding: 1.5rem 1rem;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+        opacity: 0;
+        transform: translateY(-20px);
+        pointer-events: none;
+        transition: all 0.35s ease;
+    }
+
+    nav.active {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
     nav ul {
+        margin-left: 2rem;
+        margin-right: 2rem;
+        padding: 1rem 0;
         font-size: 0.9rem;
         gap: 2rem;
         justify-content: space-between;
@@ -236,7 +325,4 @@ footer a {
         font-size: 1.5rem;
     }
 
-    section {
-        padding: 1.5rem 1rem;
-    }
 }
