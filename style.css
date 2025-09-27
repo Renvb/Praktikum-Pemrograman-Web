@@ -165,7 +165,7 @@ nav a:hover {
 
 /* ACTIVE state: bars move to center + rotate into X */
 .hamburger.active span:nth-child(1) {
-    transform: translateY(0) rotate(45deg) scaleY(0.75);
+    transform: translateY(0) rotate(45deg) scaleY(0.9);
 }
 
 .hamburger.active span:nth-child(2) {
@@ -175,7 +175,7 @@ nav a:hover {
 }
 
 .hamburger.active span:nth-child(3) {
-    transform: translateY(0) rotate(-45deg) scaleY(0.75);
+    transform: translateY(0) rotate(-45deg) scaleY(0.9);
 }
 
 /* HERO */
