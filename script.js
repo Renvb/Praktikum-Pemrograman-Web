@@ -85,3 +85,17 @@ const observer = new IntersectionObserver(entries => {
 });
 
 revealElements.forEach(el => observer.observe(el));
+
+document.addEventListener("DOMContentLoaded", () => {
+    const header = document.querySelector("header");
+    const sections = document.querySelectorAll("section");
+
+    if (header) {
+        const headerHeight = header.offsetHeight;
+
+        sections.forEach(section => {
+            section.style.scrollMarginTop = `${headerHeight + 10}px`;
+            // +10px biar ada jarak napas
+        });
+    }
+});
